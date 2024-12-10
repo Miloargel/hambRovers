@@ -1,0 +1,427 @@
+@import url('./reset.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap');
+/*
+font-family: 'Handlee', cursive;
+font-family: 'Montserrat', sans-serif;
+color_principal: #fa57733a;
+color_azul: #21242e;
+*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
+html {
+    /* sirve para generar animaciones por css en los enlaces de ancla*/
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fuenteprincipal: 'Montserrat', sans-serif;
+    --fuentetitulos: 'Handlee', cursive;
+    --colorprincipal: #fa573a;
+    --colorsecundario: #21242e;
+    --margingrid: 1em;
+    --fontsize: 1em;
+    --anchomaximo: 68.750em;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: var(--anchomaximo);
+    margin: 0 auto;
+}
+
+body {
+    font-family: var(--fuenteprincipal);
+    font-size: var(--fontsize);
+}
+
+/*  nav-top  */
+
+header .nav_top {
+    background-color: var(--colorsecundario);
+    padding: 1.25em 0em;
+}
+
+header .nav_top .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+header .nav_top a {
+    text-decoration: none;
+}
+
+header .nav_top a i {
+    color: var(--colorprincipal);
+    font-size: 110%;
+    transition: 1s;
+}
+
+header .nav_top a span {
+    color: white;
+    /* diseño movil */
+    display: none;
+}
+
+/*  nav */
+
+header nav {
+    background-color: white;
+    padding: 1.250em;
+}
+
+header nav .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+header nav .container .logo {
+    max-width: 6.250em;
+}
+
+header nav .container .hamburguesa {
+    width: 1.875em;
+    cursor: pointer;
+}
+
+header nav .container .hamburguesa>div {
+    border-top: 2px solid #aaa;
+    margin-bottom: 0.404em;
+}
+
+header nav .container .menu {
+    width: 100%;
+    text-align: center;
+}
+
+header nav .container .menu li a {
+    display: block;
+    padding: 1.25em;
+    text-decoration: none;
+    color: #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+header nav .container .menu li:last-child a {
+    border: 0px;
+}
+
+header nav .container .menu li :is(a:hover, .activo) {
+    color: var(--colorprincipal);
+}
+
+/* HOVER USER NAV-TOP BURGUER */
+
+header .nav_top a .fa-burger {
+    display: none;
+}
+
+header .nav_top a:hover .fa-burger {
+    display: inline;
+}
+
+header .nav_top a:hover .fa-user {
+    display: none;
+}
+
+/* fin header */
+
+/* inicio hero */
+
+.hero {
+    background-image: url('../css/fondo.jpg');
+    height: 60vh;
+    background-size: cover;
+    background-position: center center;
+    /*  oscurecer el background-img poniendo un color y blendeandolo con la imagen*/
+    background-color: #888;
+    background-blend-mode: multiply;
+    color: white;
+
+    display: flex;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.hero h1 {
+    font-family: var(--fuentetitulos);
+    font-size: 2em;
+}
+
+.hero h2 {
+    color: var(--colorprincipal);
+    font-size: 1.250em;
+    margin: var(--margingrid) 0;
+}
+
+.hero p {
+    font-size: 1.150em;
+}
+
+.boton {
+    display: inline-block;
+    background-color: var(--colorprincipal);
+    text-decoration: none;
+    color: white;
+
+    border-radius: 0.404em;
+    padding: 1.150em;
+    margin: var(--margingrid) 0;
+
+    border: 1px solid var(--colorprincipal);
+}
+
+.boton:hover {
+    background-color: transparent;
+    color: var(--colorprincipal);
+}
+
+.boton:hover i {
+    transition: transform 0.5s;
+    transform: translateX(6px) scale(1.10);
+}
+
+.hero ul {
+    display: flex;
+    width: 10em;
+    justify-content: space-between;
+}
+
+.hero ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+/* fin hero */
+
+/* inicio ourservices */
+
+main section {
+    padding: 2.125em 1.5em;
+}
+
+main section h2 {
+    color: black;
+    font-family: var(--fuentetitulos);
+    font-size: 2em;
+    text-align: center;
+}
+
+main section h2 span {
+    color: var(--colorprincipal);
+}
+
+main section .underline {
+    position: relative;
+    width: 6.250em;
+    margin: 0 auto;
+    color: var(--colorprincipal);
+    font-weight: 700;
+    text-align: center;
+}
+
+main section .underline span {
+    position: absolute;
+    transform: translate(-50%, -100%);
+}
+
+main section .underline hr {
+    border-color: var(--colorprincipal);
+}
+
+main section .grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section .grid article {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+    padding: 1.5em 0;
+}
+
+main section .grid article>div .fa-solid {
+    border: 1px solid var(--colorprincipal);
+    border-radius: 0.404em;
+    padding: 0.75em;
+    color: var(--colorprincipal);
+    font-size: 130%;
+}
+
+main section article h3 {
+    font-weight: 700;
+    font-size: 110%;
+    padding: 0.625em 0;
+}
+
+main p {
+    color: #666;
+    /* interlineado */
+    line-height: 1.25;
+    font-size: 95%;
+}
+
+main section article p {
+    margin-bottom: 0.5em;
+}
+
+.enlace {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--colorprincipal);
+}
+
+.fa-truck {
+    transform: rotateY(180deg);
+}
+
+/* final ourservices */
+
+/* inicio Aboutus */
+
+main section .flex {
+    display: flex;
+    flex-direction: column;
+}
+
+main section article h4 {
+    color: var(--colorprincipal);
+    padding-bottom: 0.625em;
+}
+
+main section .flex .imagen {
+    width: 95%;
+    margin: 2.5em auto;
+}
+
+main section .flex .imagen .marco {
+    border: 3px solid var(--colorprincipal);
+    transform: rotateZ(10deg);
+    transition: 1s;
+}
+
+main section .flex .imagen .marco img {
+    transform: rotateZ(-10deg);
+    transition: 1s;
+}
+
+main section .flex .imagen:hover :is(.marco, .marco img) {
+    transform: rotateZ(0deg);
+}
+
+/* fin Aboutus */
+
+
+/* inicio footer */
+
+footer {
+    background-color: var(--colorsecundario);
+    padding: 1.250em 0;
+    text-align: center;
+    color: white;
+
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--colorprincipal);
+}
+
+.flecha a {
+    display: block;
+    color: var(--colorprincipal);
+    position: fixed;
+    bottom: 1.25em;
+    right: 1.25em;
+    font-size: 300%;
+}
+
+/* fin footer */
+
+/* media query a tablet*/
+@media(min-width: 37.500em) {
+
+    /* 600px */
+    main section .grid article {
+        width: 50%;
+        border-bottom: none;
+        border-left: 1px solid #aaa;
+        padding: 1.5em;
+        margin-top: 1em;
+    }
+
+    main section .grid article:last-child {
+        width: 100%;
+    }
+
+}
+
+/*media query a tablet grande*/
+@media(min-width: 48em) {
+
+    /* 768px */
+    header .nav_top a span {
+        display: inline;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    main section .grid :is(article, article:last-child) {
+        width: 33.333%;
+    }
+
+    main section .flex {
+        flex-direction: row;
+    }
+
+    main section .flex .imagen {
+        margin: 1em 2.5em;
+    }
+}
+
+/*media query a desktop*/
+@media(min-width: 62.750em) {
+
+    /* 1004px */
+    header nav .container .hamburguesa {
+        display: none;
+    }
+
+    header nav .container .menu {
+        width: auto;
+        text-align: left;
+    }
+
+    header nav .container .menu li a {
+        padding: 0 1.25em;
+        border-bottom: none;
+        padding-top: 0.5em;
+    }
+
+    header nav .container .menu li {
+        display: inline-block;
+    }
+
+}
